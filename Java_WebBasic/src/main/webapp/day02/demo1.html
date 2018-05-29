@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+	<!-- 1.表单元素:
+		用来声明表单的范围,只有在此范围内的数据,
+		才能够提交给服务器.
+		action:声明表单提交的目标.
+		method,enctype:将来再讲. -->
+	<form action="http://www.tmooc.cn">
+		<!-- 2.表单控件:用来输入数据. -->
+		<!-- 1)input元素:它们的type属性不同 -->
+		<!-- 文本框
+			value:设置默认值.
+			maxlength:最大长度.
+			readonly:设置只读. -->
+		<p>
+			账号:<input type="text" value="abc"
+				maxlength="10" readonly/>
+		</p>
+		<!-- 密码框:属性同上. -->
+		<p>
+			密码:<input type="password"/>
+		</p>
+		<!-- 单选框
+			name:组名,同名的radio就是一组,会互斥.
+			checked:设置默认选中.
+			value:将来再讲. -->
+		<p>
+			性别:
+			<input type="radio" name="sex" checked/>男
+			<input type="radio" name="sex"/>女
+		</p>
+		<!-- 多选框
+			checked:设置默认选中
+			name,value:将来再讲 -->
+		<p>
+			兴趣:
+			<input type="checkbox"/>社交
+			<input type="checkbox" checked/>养生
+			<input type="checkbox"/>竞技
+			<input type="checkbox" checked/>美食
+		</p>
+		<!-- 隐藏框 -->
+		<p>
+			<input type="hidden" value="hi"/>
+		</p>
+		<!-- 文件框 -->
+		<p>
+			头像:<input type="file"/>
+		</p>
+		<!-- 按钮 -->
+		<p>
+			<input type="submit" value="注册"/>
+			<input type="reset" value="重置"/>
+			<input type="button" value="测试"/>
+		</p>
+		<!-- 2)其他元素:它们的标签名不同 -->
+		<!-- label:用来管理表单中的文字,可以将文字
+			与控件绑定为一个整体,从而增加控件的范围.
+			id是元素的唯一标识,任何元素都有id. -->
+		<p>
+			<input type="checkbox" id="c1"/>
+			<label for="c1">我已阅读并自愿遵守此协议!</label>
+		</p>
+		<!-- 下拉选
+			selected:设置默认选中
+			value:将来再讲. -->
+		<p>
+			城市:
+			<select>
+				<option>请选择</option>
+				<option>北京</option>
+				<option>上海</option>
+				<option selected>广州</option>
+				<option>深圳</option>
+				<option>厦门</option>
+			</select>
+		</p>
+		<!-- 文本域 -->
+		<p>
+			简介:
+			<textarea cols="50" rows="8">Hello,How are you?</textarea>
+		</p>
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

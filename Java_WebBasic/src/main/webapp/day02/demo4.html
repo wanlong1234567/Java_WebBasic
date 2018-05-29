@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择器</title>
+<style>
+	/*1.元素选择器*/
+	/*2.类选择器:根据class属性选择一类元素.*/
+	.female {
+		color: pink;
+	}
+	/*3.ID选择器:根据ID属性选择唯一的元素.*/
+	#p4 {
+		color: red;
+	}
+	/*4.选择器组:写出一组选择器,可以选中其中
+		每个选择器所对应目标的并集.*/
+	.female,#p4 {
+		font-weight: bold;
+	}
+	/*5.派生选择器*/
+	/*1)选择某元素的子孙*/
+	#p5 b {
+		color: red;
+	}
+	/*2)选择某元素的儿子*/
+	#p5>b {
+		font-size: 30px;
+	}
+	/*6.伪类选择器:选择某状态下的元素*/
+	/*1)选择未访问过的超链接*/
+	a:link {
+		color: green;
+	}
+	/*2)选择已访问过的超链接*/
+	a:visited {
+		color:red;
+	}
+	/*3)选择激活态的按钮*/
+	.btn:active {
+		background-color: red;
+	}
+	/*4)选择有焦点的框*/
+	.txt:focus {
+		background-color: yellow;
+	}
+	/*5)选择悬停态的图片*/
+	img:hover {
+		width: 250px;
+		height: 250px;
+	}
+</style>
+</head>
+<body>
+	<p class="female">苍老师呀苍老师</p>
+	<p>范传奇呀范传奇</p>
+	<p class="female">王克晶呀王克晶</p>
+	<p id="p4">瞧你们那点破事</p>
+	<p id="p5">
+		北京市<u>海淀区<b>北三环</b>西路</u>甲18号<b>中鼎大厦</b>B座8层
+	</p>
+	<p>
+		<a href="http://www.tmooc.cn">TMOOC</a>
+		<a href="http://doc.tedu.cn">文档</a>
+		<a href="http://www.apple.com.cn">苹果</a>
+		<a href="http://www.ganjin.com">赶集</a>
+	</p>
+	<p>
+		<input type="button" value="注册" class="btn"/>
+		<input type="button" value="登录" class="btn"/>
+	</p>
+	<p>
+		账号:<input type="text" class="txt"/>
+	</p>
+	<p>
+		密码:<input type="password" class="txt"/>
+	</p>
+	<p>
+		<img src="../images/01.jpg"/>
+		<img src="../images/02.jpg"/>
+		<img src="../images/03.jpg"/>
+	</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

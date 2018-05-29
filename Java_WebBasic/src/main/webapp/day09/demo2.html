@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件定义</title>
+<script>
+	function f1(e) {
+		console.log(1);
+		console.log(e);
+	}
+	//2.动态(后)绑定事件
+	//在页面加载完成后,利用js获取节点,并给它绑定事件.
+	window.onload = function(){
+		var b2 = document.getElementById("b2");
+		b2.onclick = function(e){
+			console.log(2);
+			console.log(e);
+		};
+	}
+</script>
+</head>
+<body>
+	<!-- 1.直接定义事件:在元素上,通过属性定义事件. -->
+	<input type="button" value="按钮1" onclick="f1(event);"/>
+	<input type="button" value="按钮2" id="b2"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

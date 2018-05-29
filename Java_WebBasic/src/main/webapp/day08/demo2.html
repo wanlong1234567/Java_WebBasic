@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询、增加、删除节点</title>
+<script>
+	window.onload = function() {
+		//根据name查询节点
+		var radios = document.getElementsByName("sex");
+		console.log(radios);
+		//根据层次查询节点
+		//1)查询节点的父亲
+		var cz = document.getElementById("cz");
+		var ul = cz.parentNode;
+		console.log(ul);
+		//2)查询节点的孩子
+		//包含文本(回车/空格)
+		var lis = ul.childNodes;
+		console.log(lis);
+		//不含文本
+		lis = ul.getElementsByTagName("li");
+		console.log(lis);
+		//3)查询节点的兄弟
+		//节点.父亲.孩子们[i]
+		var hf = 
+			cz.parentNode.getElementsByTagName("li")[1];
+		console.log(hf);
+	}
+	function f1() {
+		//创建节点
+		var li = document.createElement("li");
+		li.innerHTML = "上海";
+		//将新节点追加到ul下
+		var ul = document.getElementById("city");
+		ul.appendChild(li);
+	}
+	function f2() {
+		var li = document.createElement("li");
+		li.innerHTML = "深圳";
+		//将新节点插入到某个li前
+		var ul = document.getElementById("city");
+		var cz = document.getElementById("cz");
+		ul.insertBefore(li,cz);
+	}
+	function f3() {
+		var ul = document.getElementById("city");
+		var cz = document.getElementById("cz");
+		ul.removeChild(cz);
+	}
+</script>
+</head>
+<body>
+	<p>
+		性别:
+		<input type="radio" name="sex"/>男
+		<input type="radio" name="sex"/>女
+	</p>
+	<ul id="city">
+		<li>北京</li>
+		<li>合肥</li>
+		<li id="cz">沧州</li>
+		<li>石家庄</li>
+		<li>承德</li>
+	</ul>
+	<p>
+		<input type="button" value="追加" onclick="f1();"/>
+		<input type="button" value="插入" onclick="f2();"/>
+		<input type="button" value="删除" onclick="f3();"/>
+	</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

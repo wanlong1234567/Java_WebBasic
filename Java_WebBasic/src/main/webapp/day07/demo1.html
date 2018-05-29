@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window</title>
+<script>
+	function f1() {
+		alert("你好");
+	}
+	function f2() {
+		var b = confirm("你吃了吗?");
+		console.log(b);
+	}
+	function f3() {
+		var r = prompt("你吃的什么?");
+		console.log(r);
+	}
+	function f4() {
+		//启动周期性定时器,每隔1000毫秒调用一次函数.
+		//该方法返回定时器的ID,此ID用于停止定时器.
+		var n = 5;
+		var id = setInterval(function(){
+			console.log(n--);
+			if(!n) {
+				clearInterval(id);
+				console.log("DUANG");
+			}
+		},1000);
+		//定时器类似于线程,当前方法f4类似于主线程,
+		//定时器类似于支线程,而主线程与支线程是并发的,
+		//所以在启动定时器后,线程并不等待,而是立刻向下
+		//执行,所以立刻输出了BOOM,定时器却在1秒后才执行.
+		console.log("BOOM");
+	}
+	var id;
+	function f5() {
+		//启动一次性定时器,在10秒后调用函数.
+		id = setTimeout(function(){
+			console.log("叮叮叮");
+			//一次性定时器,执行一次后自动停止
+		},10000);
+	}
+	function f6() {
+		clearTimeout(id);
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="按钮1" onclick="f1();"/>
+	<input type="button" value="按钮2" onclick="f2();"/>
+	<input type="button" value="按钮3" onclick="f3();"/>
+	
+	<input type="button" value="倒数" onclick="f4();"/>
+	<input type="button" value="闹铃" onclick="f5();"/>
+	<input type="button" value="取消" onclick="f6();"/>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

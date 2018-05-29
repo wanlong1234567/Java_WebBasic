@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>发邮件</title>
+<style>
+	#msg {
+		border: 1px solid red;
+		width: 200px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+	}
+</style>
+<script>
+	var id;
+	function send() {
+		//避免重复启动定时器
+		if(id) {
+			return;
+		}
+		//显示正在发送(其实什么都没做)
+		var p = document.getElementById("msg");
+		p.innerHTML = "正在发送";
+		//推迟3秒,显示已发送
+		id = setTimeout(function(){
+			p.innerText = "已发送";
+
+			id = null;
+		},3000);
+	}
+	function cancel() {
+		//只有在启动的情况下,才能主动停止定时器
+		if(id) {
+			var p = document.getElementById("msg");
+			p.innerHTML = "已撤回";
+			clearTimeout(id);
+			id = null;
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="发送" onclick="send();"/>
+	<input type="button" value="撤回" onclick="cancel();"/>
+	<p id="msg"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
